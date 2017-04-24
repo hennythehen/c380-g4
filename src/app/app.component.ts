@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import {CourseService} from './course.service';
 
 @Component({
-  selector: 'my-app',
+  selector: 'app-root',
   template: `<enrollment-view></enrollment-view>`,
   providers: [CourseService]
 })
