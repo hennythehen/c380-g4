@@ -15,7 +15,12 @@ import {Course} from './course';
       </div>
       <div class="content">
         <div class="content-section">
-          <table class="section-table">
+          <button
+            (click)="showSectionsToggle()"
+            >Show Sections</button>
+          <table
+            *ngIf="showSections === true"
+            class="section-table">
             <tr>
               <th>Section#</th>
               <th>Instructor</th>
@@ -23,7 +28,7 @@ import {Course} from './course';
               <th>Time</th>
             </tr>
             <tr *ngFor="let section of course.getCourseSections()">
-              <td>{{section.id()}}</td>
+              <td>{{section.id}}</td>
               <td>{{section.instructor}}</td>
               <td>{{section.day}}</td>
               <td>{{section.time}}</td>
@@ -36,7 +41,7 @@ import {Course} from './course';
   styles: [`
     .tile {
       float: left;
-      width: 250px;
+      width: 300px;
       height: 250px;
       background-color: #fff;
       margin: 10px;
@@ -61,4 +66,10 @@ import {Course} from './course';
 })
 export class CourseTileComponent {
   @Input() course: Course;
+  showSections: boolean;
+  showSectionsToggle() {
+    if (this.showSections) this.showSections = false;
+    else this.showSections = true;
+
+  }
 }
