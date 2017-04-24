@@ -1,10 +1,9 @@
 import { Component } from '@angular/core';
+import {CourseService} from './course.service';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  selector: 'my-app',
+  template: `<enrollment-view></enrollment-view>`,
+  providers: [CourseService]
 })
-export class AppComponent {
-  title = 'app works!';
-}
+export class AppComponent  { name = 'Angular'; }
