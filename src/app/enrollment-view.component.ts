@@ -3,10 +3,10 @@
  */
 import { Component, OnInit } from '@angular/core';
 import { CourseService } from './course.service';
-import {Course} from './course';
+import { Course } from './course';
 
 @Component({
-  selector: 'enrollment-view',
+  selector: 'app-enrollment-view',
   providers: [CourseService],
   template:
   `
