@@ -5,12 +5,13 @@ import { CourseService } from './course.service';
   selector: 'app-root',
   template: `
     <h1>{{name}}</h1>
-    <nav>
-      <a routerLink ="/app-enrollment-view">Enrollment</a>
-      <a routerLink ="/app-search-view">Search</a>
-    </nav>
+    <ul>
+      <li><a routerLink ="/app-enrollment-view">Enrollment</a></li>
+      <li><a routerLink ="/app-search-view">Search</a></li>
+    </ul>
     <router-outlet></router-outlet>
   `,
-  providers: [CourseService]
+  providers: [CourseService],
+  styleUrls: ['./app.component.css']
 })
 export class AppComponent  { name = 'UNIVERSITY ENROLLMENT SYSTEM'; }
