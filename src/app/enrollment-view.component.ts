@@ -10,15 +10,16 @@ import { Course } from './course';
   providers: [CourseService],
   template:
   `
-    <div>
-      <div *ngFor="let course of courses">
-        <div style="background-color: lightgray; float: left; margin-right: 10px; padding: 15px">
-          <h3>{{course.getName()}}</h3>
-          <h4>{{course.getTitle()}}</h4>
-      </div>
-      </div>
+    <div class="enrollment-view">
+      <app-course-tile 
+        *ngFor="let course of courses"
+        [course]="course">
+      </app-course-tile>
     </div>
-  `
+  `,
+  styles: [`    
+    
+  `]
 })
 export class EnrollmentViewComponent implements OnInit {
   title: 'Enrollment View';
