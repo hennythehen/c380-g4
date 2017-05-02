@@ -68,8 +68,10 @@ export class CourseTileComponent {
   @Input() course: Course;
   showSections: boolean;
   showSectionsToggle() {
-    if (this.showSections) this.showSections = false;
-    else this.showSections = true;
-
+    if (this.showSections) {
+      this.showSections = false;
+    } else {
+      this.showSections = true;
+    }
   }
 }
