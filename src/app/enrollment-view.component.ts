@@ -8,18 +8,8 @@ import { Course } from './course';
 @Component({
   selector: 'app-enrollment-view',
   providers: [CourseService],
-  template:
-  `
-    <div class="enrollment-view">
-      <app-course-tile 
-        *ngFor="let course of courses"
-        [course]="course">
-      </app-course-tile>
-    </div>
-  `,
-  styles: [`    
-    
-  `]
+  templateUrl: 'enrollment-view.component.html',
+  styles: [``]
 })
 export class EnrollmentViewComponent implements OnInit {
   title: 'Enrollment View';
@@ -31,5 +21,13 @@ export class EnrollmentViewComponent implements OnInit {
   }
   getCourses(): void {
     this.courses = this.courseService.getInitialCourses();
+  }
+  onUnpin(course: Course) {
+    for (let i = 0; i < this.courses.length; i++) {
+      if (this.courses[i] === course) {
+        this.courses.splice(i, 1);
+        return;
+      }
+    }
   }
 }

@@ -35,7 +35,12 @@ export const COURSES: Course[] = [
 ];
 
 export const INITCOURSES: Course[] = [
-  new Course('COMP222', 'Computer Architecture', 'Computer Science', null, null, null),
+  new Course('COMP222', 'Computer Architecture', 'Computer Science', null, null,
+    [
+      new Section('1', 'Dr. X', '7:00-9:30', 'MW', 40, false),
+      new Section('2', 'Dr. X', '7:00-9:30', 'MW', 40, false),
+      new Section('3', 'Dr. X', '7:00-9:30', 'MW', 40, false)
+    ]),
   new Course('ART80', '3D Modeling', 'Art' , null, null, null),
   new Course('ART100', 'Photoshop', 'Art' , null, null, null)
 ];
