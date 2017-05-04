@@ -1,0 +1,39 @@
+<div class="tile">
+  <div class="heading">
+    <div class="course-code">{{course.getName()}}</div>
+    <div class="course-title">{{course.getTitle()}}</div>
+    <button
+      (click)="unpin(course)"
+      class="unpin-icon">unpin</button>
+  </div>
+  <div class="content">
+    <div class="content-section">
+      <button
+        (click)="showSectionsToggle()"
+      >Show Sections</button>
+      <table
+        *ngIf="showSections === true"
+        class="section-table">
+        <tr>
+          <th></th>
+          <th>Section#</th>
+          <th>Instructor</th>
+          <th>Days</th>
+          <th>Time</th>
+        </tr>
+        <tr *ngFor="let section of course.getCourseSections()">
+          <td>
+            <button
+              (click)="enrollInSection(section.id)">
+              Enroll
+            </button>
+          </td>
+          <td>{{section.id}}</td>
+          <td>{{section.instructor}}</td>
+          <td>{{section.day}}</td>
+          <td>{{section.time}}</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>

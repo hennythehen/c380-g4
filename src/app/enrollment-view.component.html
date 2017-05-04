@@ -1,0 +1,8 @@
+<div class="enrollment-view">
+  <app-course-tile
+    *ngFor="let course of courses"
+    (unpinEvent)="onUnpin($event)"
+    [course]="course"
+  >
+  </app-course-tile>
+</div>
