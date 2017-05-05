@@ -4,7 +4,7 @@ import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { EnrollmentViewComponent } from './enrollment-view.component';
 import { SearchViewComponent } from './search-view.component';
-import {CourseTileComponent} from './course-tile.component';
+import { CourseTileComponent } from './course-tile.component';
 
 @NgModule({
   imports:      [
