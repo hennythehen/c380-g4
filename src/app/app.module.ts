@@ -2,9 +2,10 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
-import { EnrollmentViewComponent } from './enrollment-view.component';
-import { SearchViewComponent } from './search-view.component';
-import { CourseTileComponent } from './course-tile.component';
+import { EnrollmentViewComponent } from './enrollment/enrollment-view.component';
+import { SearchViewComponent } from './search/search-view.component';
+import { CourseTileComponent } from './enrollment/course-tile.component';
+import {SearchRowComponent} from "app/search/search-row.component";
 
 @NgModule({
   imports:      [
@@ -23,8 +24,9 @@ import { CourseTileComponent } from './course-tile.component';
   declarations: [
     AppComponent,
     EnrollmentViewComponent,
+    CourseTileComponent,
     SearchViewComponent,
-    CourseTileComponent
+    SearchRowComponent
   ],
   bootstrap:    [ AppComponent ]
 })

@@ -3,7 +3,7 @@
  */
 
 import {Component, EventEmitter, Input, Output} from '@angular/core';
-import {Course} from './course';
+import {Course} from '../model/course';
 
 @Component({
   selector: 'app-course-tile',

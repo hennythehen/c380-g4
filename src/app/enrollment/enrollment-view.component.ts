@@ -2,12 +2,13 @@
  * Created by kenny on 4/21/17.
  */
 import { Component, OnInit } from '@angular/core';
-import { CourseService } from './course.service';
-import { Course } from './course';
+import { CourseService } from '../services/course.service';
+import { Course } from '../model/course';
+import {EnrollmentService} from '../services/enrollment.service';
 
 @Component({
   selector: 'app-enrollment-view',
-  providers: [CourseService],
+  providers: [CourseService, EnrollmentService],
   templateUrl: 'enrollment-view.component.html',
   styles: [``]
 })
@@ -15,7 +16,9 @@ export class EnrollmentViewComponent implements OnInit {
   title: 'Enrollment View';
   courses: Course[];
   selectedCourse: Course;
-  constructor(private courseService: CourseService) {}
+  constructor(
+    private courseService: CourseService,
+    private enrollmentService: EnrollmentService) {}
   ngOnInit(): void {
     this.getCourses();
   }

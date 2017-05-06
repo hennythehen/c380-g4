@@ -3,12 +3,13 @@
  */
 import { Section } from './section';
 export class Course {
-  private name: string;
-  private title: string;
-  private department: string;
-  private coursePreReqs: Course[];
-  private concurrentLab: Course;
-  private courseSections: Section[];
+  name: string;
+  title: string;
+  department: string;
+  description: string;
+  coursePreReqs: Course[];
+  concurrentLab: Course;
+  courseSections: Section[];
   constructor(name: string, title: string, department: string, coursePreReqs: Course[], concurrentLab: Course, courseSections: Section[]) {
     this.name = name;
     this.title = title;
