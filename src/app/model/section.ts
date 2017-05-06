@@ -23,19 +23,4 @@ export class Section {
     this.capacity = capacity;
     this.enrolled = enrolled;
   }
-  getId(): string {
-    return this.id;
-  }
-  getTime(): string {
-    return this.time;
-  }
-  getDay(): string {
-    return this.day;
-  }
-  getCapactiy(): number {
-    return this.capacity;
-  }
-  isEnrolled(): boolean {
-    return this.enrolled;
-  }
 }

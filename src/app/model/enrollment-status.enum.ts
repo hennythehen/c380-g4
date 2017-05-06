@@ -3,7 +3,6 @@
  */
 
 export enum EnrollmentStatus {
-  Enrollable = 1,
-  Enrolled,
+  Enrolled = 1,
   Waitlisted
 }

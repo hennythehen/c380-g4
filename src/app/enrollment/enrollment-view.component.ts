@@ -14,7 +14,7 @@ import {EnrollmentService} from '../services/enrollment.service';
 })
 export class EnrollmentViewComponent implements OnInit {
   title: 'Enrollment View';
-  courses: Course[];
+  displayedCourses: Course[];
   selectedCourse: Course;
   constructor(
     private courseService: CourseService,
@@ -23,14 +23,9 @@ export class EnrollmentViewComponent implements OnInit {
     this.getCourses();
   }
   getCourses(): void {
-    this.courses = this.courseService.getInitialCourses();
+    this.displayedCourses = this.courseService.getInitialCourses();
   }
   onUnpin(course: Course) {
-    for (let i = 0; i < this.courses.length; i++) {
-      if (this.courses[i] === course) {
-        this.courses.splice(i, 1);
-        return;
-      }
-    }
+    this.courseService.pinToggle(course);
   }
 }

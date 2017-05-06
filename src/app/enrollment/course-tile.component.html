@@ -1,7 +1,7 @@
 <div class="tile">
   <div class="heading">
-    <div class="course-code">{{course.getName()}}</div>
-    <div class="course-title">{{course.getTitle()}}</div>
+    <div class="course-code">{{course.name}}</div>
+    <div class="course-title">{{course.title}}</div>
     <button
       (click)="unpin(course)"
       class="unpin-icon">unpin</button>
@@ -21,7 +21,7 @@
           <th>Days</th>
           <th>Time</th>
         </tr>
-        <tr *ngFor="let section of course.getCourseSections()">
+        <tr *ngFor="let section of course.courseSections">
           <td>
             <button
               (click)="enrollInSection(section.id)">

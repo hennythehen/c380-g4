@@ -22,7 +22,7 @@ import {EnrollmentService} from '../services/enrollment.service';
       <app-search-row
         *ngFor="let filteredCourse of filteredArr"
         [course]="filteredCourse"
-        (pinEvent)="onPin($event)">
+        (togglePinEvent)="onPinToggle($event)">
       </app-search-row>
     </div>
   `,
@@ -38,7 +38,7 @@ export class SearchViewComponent implements OnInit {
   selectFilter(dept: string): void {
     this.filteredArr = this.searchService.filterDepartments(dept);
   }
-  onPin(course: Course) {
-    this.courseService.pinnedCourses.push(course);
+  onPinToggle(course: Course) {
+    this.courseService.pinToggle(course);
   }
 }

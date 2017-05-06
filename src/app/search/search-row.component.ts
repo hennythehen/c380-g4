@@ -10,11 +10,12 @@ import {EnrollmentService} from '../services/enrollment.service';
       <h4 class="heading-row">
         <span class="course-title">{{course.title}}</span>
         <span class="course-name">{{course.name}}</span>
+        <button
+          class="pin"
+          (click)="togglePin(course)"
+        >Toggle
+        </button>
       </h4>
-      <button
-        class="pin"
-        (click)="pin(course)"
-      >Pin</button>
     </div>
     <p class="description">{{course.description}}</p>
   </div>
@@ -22,9 +23,9 @@ import {EnrollmentService} from '../services/enrollment.service';
 })
 export class SearchRowComponent {
   @Input() course: Course;
-  @Output() pinEvent: EventEmitter<any> = new EventEmitter<any>();
+  @Output() togglePinEvent: EventEmitter<any> = new EventEmitter<any>();
   constructor(private enrollmentService: EnrollmentService) { }
-  pin(course: Course) {
-    this.pinEvent.emit(course);
+  togglePin(course: Course) {
+    this.togglePinEvent.emit(course);
   }
 }
