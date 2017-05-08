@@ -5,7 +5,8 @@ import { AppComponent } from './app.component';
 import { EnrollmentViewComponent } from './enrollment/enrollment-view.component';
 import { SearchViewComponent } from './search/search-view.component';
 import { CourseTileComponent } from './enrollment/course-tile.component';
-import {SearchRowComponent} from "app/search/search-row.component";
+import {SearchRowComponent} from 'app/search/search-row.component';
+import {ScheduleViewComponent} from './schedule/schedule-view.component';
 
 @NgModule({
   imports:      [
@@ -18,15 +19,20 @@ import {SearchRowComponent} from "app/search/search-row.component";
       {
         path: 'app-search-view',
         component: SearchViewComponent
+      },
+      {
+        path: 'schedule',
+        component: ScheduleViewComponent
       }
     ])
   ],
   declarations: [
     AppComponent,
     EnrollmentViewComponent,
+    ScheduleViewComponent,
     CourseTileComponent,
     SearchViewComponent,
-    SearchRowComponent
+    SearchRowComponent,
   ],
   bootstrap:    [ AppComponent ]
 })

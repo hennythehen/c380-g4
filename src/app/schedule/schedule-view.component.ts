@@ -1,33 +1,47 @@
-import { Component } from '@angular/core';
-import {Course} from '../model/course';
+import {Component, OnInit} from '@angular/core';
+import {EnrolledSection} from '../model/enrolled-section';
+import {EnrollmentService} from '../services/enrollment.service';
+import {DayOfWeek} from '../model/day-of-week.enum';
+import {ScheduleService} from '../services/schedule.service';
 
 @Component({
   selector: 'app-schedule-view',
-  template: `
-    <div class="schedule">
-      <table class="schedule-table">
-        <tr>
-          <th></th>
-          <th>Mon</th>
-          <th>Tue</th>
-          <th>Wed</th>
-          <th>Thu</th>
-          <th>Fri</th>
-          <th>Sat</th>
-          <th>Sun</th>
-        </tr>
-        <!--<tr *ngFor="let c of scheduledClasses">-->
-          <!--<td></td>-->
-        <!--</tr>-->
-        <tr>
-        </tr>
-      </table>
-    </div>
-  `,
-  styles: [``],
+  providers: [ScheduleService, EnrollmentService],
+  templateUrl: 'schedule-view.component.html',
 })
-export class ScheduleViewComponent {
-  // constructor(private enrollmentService: EnrollmentService) {}
-  // scheduledClasses: Course[];
-
+export class ScheduleViewComponent implements OnInit {
+  viewStyle: string;
+  enrolledSections: EnrolledSection[];
+  constructor(
+    private scheduleService: ScheduleService,
+    private enrollmentService: EnrollmentService) {
+    this.viewStyle = 'card';
+  }
+  ngOnInit() {
+    this.getClasses();
+  }
+  private getClasses() {
+    this.enrolledSections = this.enrollmentService.getEnrolledSections();
+  }
+  private getClassesForDay(d: DayOfWeek): EnrolledSection[] {
+    const classesInDay: EnrolledSection[] = this.enrolledSections.filter(
+      (section) => this.containsDay(section, d)
+    );
+    return classesInDay;
+  }
+  private containsDay(section, d) {
+    const days = this.scheduleService.parseCourseDays(section);
+    if (days.filter((day) => day === d) !== null) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+  private isCardStyle(): boolean {
+    console.log(this.viewStyle === 'card');
+    return this.viewStyle === 'card';
+  }
+  private isTableStyle(): boolean {
+    return this.viewStyle === 'table';
+  }
 }
