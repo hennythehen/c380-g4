@@ -1,0 +1,72 @@
+//VARIABLES
+$primary-color: #FFFFFF;
+$secondary-color: #222222;
+
+$clr-nav-text-inactive: #999;
+$clr-nav-text-hover: lighten($clr-nav-text-inactive, 20%);
+$clr-nav-text-active: #fff;
+
+$clr-status-enrolled: #5CB85C;
+$clr-status-waitlisted: #0275D8;
+$clr-status-conflict: #D8534F;
+
+body {
+  font-family: Arial;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+ul {
+  list-style: none;
+}
+
+.wrapper {
+  width: 100%;
+}
+
+$header-bar-height: 50px;
+$vertical-nav-width: 200px;
+
+.vertical-nav {
+  z-index: 2;
+  position: fixed;
+  height: 100%;
+  top: 0;
+  left: 0;
+  padding-top: $header-bar-height;
+  background-color: $secondary-color;
+  width: $vertical-nav-width;
+
+  .nav-item {
+    & .active {
+      background-color: darken($secondary-color, 38%);
+      color: $primary-color;
+    }
+  }
+}
+
+.header-bar {
+  position: fixed;
+  z-index: 3;
+  height: $header-bar-height;
+  left: 0;
+  top: 0;
+  background-color: $secondary-color;
+  color: $primary-color;
+  width: 100%;
+
+  h1 {
+    font-weight: lighter;;
+    font-size: 1.5em;
+    padding: 10px;
+    margin: 0;
+    text-align: left;
+  }
+}
+
+.content {
+  background-color: darken($primary-color, 5%);
+  margin-top: $header-bar-height;
+  margin-left: $vertical-nav-width;
+}
