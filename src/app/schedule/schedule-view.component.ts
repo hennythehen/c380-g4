@@ -3,19 +3,30 @@ import {EnrolledSection} from '../model/enrolled-section';
 import {EnrollmentService} from '../services/enrollment.service';
 import {DayOfWeek} from '../model/day-of-week.enum';
 import {ScheduleService} from '../services/schedule.service';
+import {isNumber} from 'util';
 
 @Component({
   selector: 'app-schedule-view',
   providers: [ScheduleService, EnrollmentService],
   templateUrl: 'schedule-view.component.html',
+  styles: [`
+    .schedule-card {
+      width: 100px;
+      float: left;
+      background: pink;
+    }
+  `]
 })
 export class ScheduleViewComponent implements OnInit {
-  viewStyle: string;
+  cardView: boolean;
+  tableView: boolean;
   enrolledSections: EnrolledSection[];
+  days: string[];
   constructor(
     private scheduleService: ScheduleService,
     private enrollmentService: EnrollmentService) {
-    this.viewStyle = 'card';
+    this.days = Object.keys(DayOfWeek).filter(key => (parseInt(key, 10) >= 0));
+    this.cardView = true; this.tableView = false;
   }
   ngOnInit() {
     this.getClasses();
@@ -24,24 +35,21 @@ export class ScheduleViewComponent implements OnInit {
     this.enrolledSections = this.enrollmentService.getEnrolledSections();
   }
   private getClassesForDay(d: DayOfWeek): EnrolledSection[] {
-    const classesInDay: EnrolledSection[] = this.enrolledSections.filter(
-      (section) => this.containsDay(section, d)
-    );
-    return classesInDay;
+    return this.scheduleService.getClassesOnDay(d);
   }
-  private containsDay(section, d) {
-    const days = this.scheduleService.parseCourseDays(section);
-    if (days.filter((day) => day === d) !== null) {
-      return true;
-    } else {
-      return false;
-    }
+
+  private setCardView() {
+    this.tableView = false;
+    this.cardView = true;
   }
-  private isCardStyle(): boolean {
-    console.log(this.viewStyle === 'card');
-    return this.viewStyle === 'card';
+  private setTableView() {
+    this.tableView = true;
+    this.cardView = false;
   }
-  private isTableStyle(): boolean {
-    return this.viewStyle === 'table';
+  private getDayStrFromEnum(d: DayOfWeek): string {
+    return DayOfWeek[d];
+  }
+  private printenrolled() {
+    console.log('printenrolled', this.enrolledSections);
   }
 }

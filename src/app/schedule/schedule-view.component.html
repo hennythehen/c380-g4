@@ -1,26 +1,26 @@
 <div class="schedule-view">
   <div
     class="card-schedule-wrapper"
-    *ngIf="isCardStyle()"
+    *ngIf="cardView"
   >
     <div
-      *ngFor="let day of DayOfWeek"
+      *ngFor="let day of days"
       class="schedule-card"
+      (click)="this.printenrolled()"
     >
-      {{day}}
       <div class="heading">
-        <h3>{{DayOfWeek[day]}}</h3>
+        <h3>{{getDayStrFromEnum(day)}}</h3>
       </div>
       <div class="card-class-list">
         <div class="card-list-item"
              *ngFor="let enrSec of this.getClassesForDay(day)"
         >
+          {{day}}
           <p><em>{{enrSec.isCourse.name}}</em></p>
-          <p>Time: {{enrSec.time}}</p>
-          <p>Instructor: {{enrSec.instructor}}</p>
+          <p>Time: {{enrSec.section.time}}</p>
+          <p>Instructor: {{enrSec.section.instructor}}</p>
         </div>
       </div>
     </div>
-
   </div>
 </div>

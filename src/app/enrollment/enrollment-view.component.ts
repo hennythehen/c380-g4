@@ -5,6 +5,7 @@ import { Component, OnInit } from '@angular/core';
 import { CourseService } from '../services/course.service';
 import { Course } from '../model/course';
 import {EnrollmentService} from '../services/enrollment.service';
+import {Section} from '../model/section';
 
 @Component({
   selector: 'app-enrollment-view',
@@ -27,5 +28,8 @@ export class EnrollmentViewComponent implements OnInit {
   }
   onUnpin(course: Course) {
     this.courseService.pinToggle(course);
+  }
+  onEnroll(section: Section, course: Course) {
+    this.enrollmentService.enroll(course, section);
   }
 }

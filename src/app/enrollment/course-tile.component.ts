@@ -4,6 +4,7 @@
 
 import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {Course} from '../model/course';
+import {Section} from '../model/section';
 
 @Component({
   selector: 'app-course-tile',
@@ -13,6 +14,7 @@ import {Course} from '../model/course';
 export class CourseTileComponent {
   @Input() course: Course;
   @Output() unpinEvent: EventEmitter<any> =  new EventEmitter<any>();
+  @Output() enrollEvent: EventEmitter<any> = new EventEmitter<any>();
   showSections: boolean;
   showSectionsToggle() {
     if (this.showSections) {
@@ -21,8 +23,8 @@ export class CourseTileComponent {
       this.showSections = true;
     }
   }
-  enrollInSection(sectionId: number) {
-    alert('attempting to enroll in section ' + sectionId); //TODO write service
+  enrollInSection(section: Section) {
+    this.enrollEvent.emit(section);
   }
   unpin(course: Course) {
     this.unpinEvent.emit(course);

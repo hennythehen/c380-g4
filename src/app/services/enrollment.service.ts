@@ -6,8 +6,16 @@ import {Section} from '../model/section';
 
 @Injectable()
 export class EnrollmentService {
-  static enrolledSections: EnrolledSection[];
-  static waitlistedSections: EnrolledSection[];
+  static enrolledSections: EnrolledSection[] = new Array();
+  static waitlistedSections: EnrolledSection[] = new Array();
+  constructor() {
+    // if (EnrollmentService.enrolledSections == null) {
+    //   EnrollmentService.enrolledSections = [];
+    // }
+    // if (EnrollmentService.waitlistedSections == null) {
+    //   EnrollmentService.enrolledSections = [];
+    // }
+  }
   enroll(c: Course, s: Section) {
     const es = this.attemptToEnroll(c, s);
     switch (es.status) {
@@ -18,28 +26,18 @@ export class EnrollmentService {
         EnrollmentService.waitlistedSections.push(es);
         break;
     }
+    console.log(EnrollmentService.enrolledSections);
   }
 
   private attemptToEnroll(c: Course, s: Section): EnrolledSection {
-    const es: EnrolledSection = <EnrolledSection>s;
+    let es: EnrolledSection = new EnrolledSection();
     es.status = EnrollmentStatus.Enrolled;
     es.isCourse = c;
+    es.section = s;
     return es;
   }
 
   getEnrolledSections() {
     return EnrollmentService.enrolledSections;
   }
-
-  // getClassesWithStatus(status: EnrollmentStatus) {
-  //   switch (status) {
-  //     case EnrollmentStatus.Enrolled: {
-  //       return this.getEnrolledClasses();
-  //     }
-  //     case EnrollmentStatus.Waitlisted: {
-  //       return this.getWaitlistedClasses();
-  //     }
-  //   }
-  // }
-
 }

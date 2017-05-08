@@ -2,6 +2,7 @@
   <app-course-tile
     *ngFor="let course of displayedCourses"
     (unpinEvent)="onUnpin($event)"
+    (enrollEvent)="onEnroll($event, course)"
     [course]="course"
   >
   </app-course-tile>
