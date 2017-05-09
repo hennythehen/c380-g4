@@ -26,18 +26,38 @@ export class EnrollmentService {
         EnrollmentService.waitlistedSections.push(es);
         break;
     }
-    console.log(EnrollmentService.enrolledSections);
   }
 
   private attemptToEnroll(c: Course, s: Section): EnrolledSection {
     let es: EnrolledSection = new EnrolledSection();
-    es.status = EnrollmentStatus.Enrolled;
     es.isCourse = c;
     es.section = s;
+
+
+
+    es.status = EnrollmentStatus.Enrolled;
     return es;
   }
 
   getEnrolledSections() {
     return EnrollmentService.enrolledSections;
+  }
+
+  private sectionIsFull(eSection: EnrolledSection): boolean {
+    //TODO get server logic here
+    return false;
+  }
+
+  private isAlreadyEnrolled(eSection: EnrolledSection): boolean {
+    for (let i = 0; i < EnrollmentService.enrolledSections.length; i++) {
+      if (eSection === EnrollmentService.enrolledSections[i]) {
+        return true;
+      }
+    }
+    return false;
+  }
+
+  private checkScheduleConflicts(eSection: EnrolledSection): boolean {
+
   }
 }

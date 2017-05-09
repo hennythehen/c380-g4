@@ -1,0 +1,50 @@
+$clr-status-enrolled: #5CB85C;
+$clr-status-waitlisted: #0275D8;
+$clr-status-conflict: #D8534F;
+
+.tile {
+  //width: 200px;
+  margin: 13px;
+  background: white;
+  position: relative;
+  padding: 10px;
+  float: left;
+
+  display: flex;
+  flex-direction: column;
+
+  &.enrolled {
+    background: $clr-status-enrolled;
+  }
+  &.waitlist {
+    background: $clr-status-waitlisted;
+  }
+  &.schedule-conflict {
+    background: $clr-status-conflict;
+  }
+
+  .heading {
+    margin-bottom: 5px;
+  }
+
+  .content {
+    display: flex;
+    flex-direction: column;
+
+    .content-section {
+
+    }
+  }
+}
+
+.unpin-icon {
+  width: 25px;
+  height: 25px;
+  position: absolute;
+  top: 25px;
+  left: 160px;
+  background-color:red;
+  color: white;
+}
+
+

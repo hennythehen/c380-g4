@@ -11,7 +11,7 @@ import {Section} from '../model/section';
   selector: 'app-enrollment-view',
   providers: [CourseService, EnrollmentService],
   templateUrl: 'enrollment-view.component.html',
-  styles: [``]
+  styleUrls: ['enrollment-view.component.scss']
 })
 export class EnrollmentViewComponent implements OnInit {
   title: 'Enrollment View';

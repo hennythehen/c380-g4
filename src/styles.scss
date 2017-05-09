@@ -37,11 +37,25 @@ $vertical-nav-width: 200px;
   padding-top: $header-bar-height;
   background-color: $secondary-color;
   width: $vertical-nav-width;
+  display: flex;
+  flex-direction: column;
 
   .nav-item {
-    & .active {
-      background-color: darken($secondary-color, 38%);
+    display: flex;
+    width: 100%;
+    .nav-link {
+      text-decoration: none;
       color: $primary-color;
+      width: 100%;
+      display: inline;
+      padding: 15px 0 15px 15px;
+      &.active {
+        background-color: darken($secondary-color, 38%);
+        color: $primary-color;
+      }
+      &:hover {
+        background-color: darken($secondary-color, 38%);
+      }
     }
   }
 }

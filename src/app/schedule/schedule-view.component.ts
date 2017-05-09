@@ -10,9 +10,20 @@ import {isNumber} from 'util';
   providers: [ScheduleService, EnrollmentService],
   templateUrl: 'schedule-view.component.html',
   styles: [`
+    .schedule-view {
+      width: 100%;
+      overflow: hidden;
+    }
+    .card-schedule-wrapper {
+      background: lime;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+    }
     .schedule-card {
-      width: 100px;
-      float: left;
+      padding: 0 5px 0 5px;
+      border: 1px;
+      flex-grow: 1;
       background: pink;
     }
   `]

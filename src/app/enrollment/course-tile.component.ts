@@ -9,7 +9,7 @@ import {Section} from '../model/section';
 @Component({
   selector: 'app-course-tile',
   templateUrl: 'course-tile.component.html',
-  styleUrls: ['course-tile.component.css']
+  styleUrls: ['course-tile.component.scss']
 })
 export class CourseTileComponent {
   @Input() course: Course;
