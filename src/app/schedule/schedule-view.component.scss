@@ -1,0 +1,50 @@
+.schedule-view {
+  width: 100%;
+  overflow: hidden;
+}
+.card-schedule-wrapper {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+.schedule-card {
+
+  .heading {
+    h3 {
+      margin: 5px 0 10px 0;
+      border-bottom: 1px solid lighten(lightgray, 5%);
+    }
+    text-align: center;
+  }
+
+  padding: 0 5px 0 5px;
+  margin: 3px;
+  border: 1px;
+  flex-grow: 1;
+  background: white;
+}
+
+.drop-button {
+  cursor: pointer;
+  font-weight: bold;
+  width: 15px;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+.card-list-item {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 15px;
+  border-bottom: 1px solid lighten(lightgray, 5%);
+  padding-bottom: 5px;
+
+  &:last-child {
+    border-bottom: 0;
+    margin-bottom: 0;
+  }
+}

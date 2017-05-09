@@ -9,24 +9,7 @@ import {isNumber} from 'util';
   selector: 'app-schedule-view',
   providers: [ScheduleService, EnrollmentService],
   templateUrl: 'schedule-view.component.html',
-  styles: [`
-    .schedule-view {
-      width: 100%;
-      overflow: hidden;
-    }
-    .card-schedule-wrapper {
-      background: lime;
-      display: flex;
-      flex-direction: row;
-      flex-wrap: nowrap;
-    }
-    .schedule-card {
-      padding: 0 5px 0 5px;
-      border: 1px;
-      flex-grow: 1;
-      background: pink;
-    }
-  `]
+  styleUrls: ['schedule-view.component.scss']
 })
 export class ScheduleViewComponent implements OnInit {
   cardView: boolean;

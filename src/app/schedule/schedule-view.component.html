@@ -14,14 +14,15 @@
         <div class="card-list-item"
              *ngFor="let enrSec of this.getClassesForDay(day)"
         >
-          <button
+          <ul>
+            <li><em>{{enrSec.isCourse.name}}</em></li>
+            <li>Time: {{enrSec.section.timeInterval.start.getFormattedTime()}} - {{enrSec.section.timeInterval.end.getFormattedTime()}}</li>
+            <li>Instructor: {{enrSec.section.instructor}}</li>
+          </ul>
+          <span
             class="drop-button"
             (click)="dropSection(enrSec)"
-            >Drop</button>
-          {{day}}
-          <p><em>{{enrSec.isCourse.name}}</em></p>
-          <p>Time: {{enrSec.section.timeInterval.start.getFormattedTime()}} - {{enrSec.section.timeInterval.end.getFormattedTime()}}</p>
-          <p>Instructor: {{enrSec.section.instructor}}</p>
+            >x</span>
         </div>
       </div>
     </div>

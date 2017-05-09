@@ -7,19 +7,18 @@ import {EnrollmentService} from '../services/enrollment.service';
   template: `
   <div class="search-row">
     <div class="heading">
-      <h4 class="heading-row">
-        <span class="course-title">{{course.title}}</span>
-        <span class="course-name">{{course.name}}</span>
-        <button
-          class="pin"
-          (click)="togglePin(course)"
-        >Toggle
-        </button>
-      </h4>
+      <h4 class="heading-row">{{course.title}}</h4>
+      <h4 class="heading-row">{{course.name}}</h4>
+      <button
+        class="pin"
+        (click)="togglePin(course)"
+      >Toggle
+      </button>
     </div>
     <p class="description">{{course.description}}</p>
   </div>
-  `
+  `,
+  styleUrls: ['search-row.component.scss']
 })
 export class SearchRowComponent {
   @Input() course: Course;
