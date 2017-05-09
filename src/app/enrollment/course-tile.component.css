@@ -1,12 +1,12 @@
 .tile {
-  float: right;
+  float: left& auto;
   width: 300px;
   height: 250px;
   background-color: #fff;
   margin: 10px;
   padding: 10px 10px 10px 10px;
   box-shadow: 6px 6px 20px #999;
-  position: relative;
+
   transition: 0.3s;
   border-radius: 5px;
 }
