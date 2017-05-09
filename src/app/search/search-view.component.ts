@@ -9,7 +9,14 @@ import {EnrollmentService} from '../services/enrollment.service';
   selector: 'app-search-view',
   providers: [CourseService, SearchService, EnrollmentService],
   template: `
-    <h3>SearchView</h3>
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+
+    <h3 align = "center ">SearchView</h3>
     <div class="filter-list">
       <ul>
         <li *ngFor="let dept of departments"
@@ -25,6 +32,11 @@ import {EnrollmentService} from '../services/enrollment.service';
         (togglePinEvent)="onPinToggle($event)">
       </app-search-row>
     </div>
+
+
+
+    <
+
   `,
   styleUrls: ['search-view.component.css']
 })
@@ -41,4 +53,5 @@ export class SearchViewComponent implements OnInit {
   onPinToggle(course: Course) {
     this.courseService.pinToggle(course);
   }
+
 }

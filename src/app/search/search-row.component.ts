@@ -5,7 +5,11 @@ import {EnrollmentService} from '../services/enrollment.service';
 @Component({
   selector: 'app-search-row',
   template: `
-  <div class="search-row">
+    
+    
+    
+
+    <div class="search-row">
     <div class="heading">
       <h4 class="heading-row">
         <span class="course-title">{{course.title}}</span>
@@ -19,6 +23,12 @@ import {EnrollmentService} from '../services/enrollment.service';
     </div>
     <p class="description">{{course.description}}</p>
   </div>
+  
+  
+    
+    
+  
+ 
   `
 })
 export class SearchRowComponent {
@@ -28,4 +38,8 @@ export class SearchRowComponent {
   togglePin(course: Course) {
     this.togglePinEvent.emit(course);
   }
+
+
+
+
 }

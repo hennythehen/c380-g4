@@ -1,16 +1,41 @@
+<!DOCTYPE html>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <meta charset="utf-8">
+  <!-- Viewport Meta Tag -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+</head>
+<body>
+
+
+<!-- YOUR CONTENT GOES HERE -->
+
 <div class="tile">
   <div class="heading">
+
+    <span class="glyphicon glyphicon-remove" style="left: 260px" (click)="unpin(course)">
+
+    </span>
+
+
     <div class="course-code">{{course.name}}</div>
     <div class="course-title">{{course.title}}</div>
-    <button
-      (click)="unpin(course)"
-      class="unpin-icon">unpin</button>
+
   </div>
   <div class="content">
     <div class="content-section">
-      <button
-        (click)="showSectionsToggle()"
-      >Show Sections</button>
+      <button (click)="showSectionsToggle()">Show Sections</button>
       <table
         *ngIf="showSections === true"
         class="section-table">
@@ -23,11 +48,14 @@
         </tr>
         <tr *ngFor="let section of course.courseSections">
           <td>
-            <button
-              (click)="enrollInSection(section.id)">
-              Enroll
-            </button>
+            <span class="glyphicon glyphicon-plus" style="right: 2px"
+                  (click)="enrollInSection(section.id)">
+
+            </span>
+
           </td>
+
+
           <td>{{section.id}}</td>
           <td>{{section.instructor}}</td>
           <td>{{section.day}}</td>
@@ -36,4 +64,6 @@
       </table>
     </div>
   </div>
+
 </div>
+

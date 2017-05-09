@@ -9,6 +9,7 @@ import {Course} from '../model/course';
   selector: 'app-course-tile',
   templateUrl: 'course-tile.component.html',
   styleUrls: ['course-tile.component.css']
+
 })
 export class CourseTileComponent {
   @Input() course: Course;
@@ -22,9 +23,11 @@ export class CourseTileComponent {
     }
   }
   enrollInSection(sectionId: number) {
+
     alert('attempting to enroll in section ' + sectionId); //TODO write service
   }
   unpin(course: Course) {
     this.unpinEvent.emit(course);
   }
+
 }

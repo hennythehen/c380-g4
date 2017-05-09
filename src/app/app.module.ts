@@ -19,6 +19,7 @@ import {SearchRowComponent} from "app/search/search-row.component";
         path: 'app-search-view',
         component: SearchViewComponent
       }
+
     ])
   ],
   declarations: [
