@@ -12,6 +12,18 @@ export class Schedule {
       this.classesOnDay[i] = [];
     }
   }
+  dropSection(s: EnrolledSection) {
+    const classDays: DayOfWeek[] = s.section.parseCourseDays();
+    for (let i = 0; i < classDays.length; i++) {
+      const day = classDays[i];
+      for (let j = 0; j < this.classesOnDay[day].length; j++) {
+        const section = this.classesOnDay[day][j];
+        if (s === section) {
+          this.classesOnDay[day].splice(j, 1);
+        }
+      }
+    }
+  }
   addSection(s: EnrolledSection) {
     const classDays: DayOfWeek[] = s.section.parseCourseDays();
     for (let i = 0; i < classDays.length; i++) {

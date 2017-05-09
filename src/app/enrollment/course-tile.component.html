@@ -1,4 +1,4 @@
-<div class="tile">
+<div class="tile schedule-conflict">
   <div class="heading">
     <div>
       <div class="course-code">{{course.name}}</div>
@@ -32,8 +32,8 @@
           </td>
           <td>{{section.id}}</td>
           <td>{{section.instructor}}</td>
-          <td>{{section.day}}</td>
-          <td>{{section.time}}</td>
+          <td>{{section.days}}</td>
+          <td>{{section.timeInterval.start.getFormattedTime()}} - {{section.timeInterval.end.getFormattedTime()}}</td>
         </tr>
       </table>
     </div>

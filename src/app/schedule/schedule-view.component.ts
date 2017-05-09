@@ -48,7 +48,6 @@ export class ScheduleViewComponent implements OnInit {
   private getClassesForDay(d: DayOfWeek): EnrolledSection[] {
     return this.scheduleService.getClassesOnDay(d);
   }
-
   private setCardView() {
     this.tableView = false;
     this.cardView = true;
@@ -59,5 +58,16 @@ export class ScheduleViewComponent implements OnInit {
   }
   private getDayStrFromEnum(d: DayOfWeek): string {
     return DayOfWeek[d];
+  }
+  private dropSection(es: EnrolledSection) {
+    if (this.enrollmentService.dropEnrolledSection(es)) {
+      ScheduleService.schedule.dropSection(es);
+    }
+    // for (let i = 0; i < this.enrolledSections.length; i++) {
+    //   const esElem: EnrolledSection = this.enrolledSections[i];
+    //   if (es === esElem) {
+    //     this.enrolledSections.splice(i, 1);
+    //   }
+    // }
   }
 }

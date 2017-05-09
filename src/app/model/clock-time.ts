@@ -19,10 +19,10 @@ export class ClockTime implements ITime {
     return this.fourDigitTime;
   }
   getFormattedTime(): string {
-    const str = this.getHours() + ':' + this.fourDigitTime % 100 + (this.getHours() >= 12 ? 'PM' : 'AM');
+    const str = this.getHours() + ':' + ('0' + (this.fourDigitTime % 100)).slice(-2) + (this.getHours() >= 12 ? 'PM' : 'AM');
     return str;
   }
   private getHours() {
-    return (this.fourDigitTime - (this.fourDigitTime % 100)) / 100
+    return (this.fourDigitTime - (this.fourDigitTime % 100)) / 100;
   }
 }

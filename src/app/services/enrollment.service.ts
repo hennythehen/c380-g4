@@ -29,7 +29,22 @@ export class EnrollmentService {
   getEnrolledSections() {
     return EnrollmentService.enrolledSections;
   }
-
+  dropEnrolledSection(es: EnrolledSection): boolean {
+    if (confirm('Are you sure you want to drop this class?')) {
+      const esArr = this.getEnrolledSections();
+      for (let i = 0; i < esArr.length; i++) {
+        const esElem = esArr[i];
+        if (esElem === es) {
+          alert('found');
+          esArr.splice(i, 1);
+          return true;
+        }
+      }
+    } else {
+      return false;
+    }
+    // this.scheduleService.dropEnrolledClass(es);
+  }
   private attemptToEnroll(c: Course, s: Section): EnrolledSection {
     const es: EnrolledSection = new EnrolledSection();
     es.isCourse = c;

@@ -7,7 +7,7 @@ $clr-status-conflict: #D8534F;
   background: white;
   position: relative;
   padding: 10px;
-  float: left;
+  //float: left;
 
   display: flex;
   flex-direction: column;
@@ -15,12 +15,15 @@ $clr-status-conflict: #D8534F;
   box-shadow: 4px 4px 9px #999;
 
   &.enrolled {
+    color: white;
     background: $clr-status-enrolled;
   }
   &.waitlist {
+    color: white;
     background: $clr-status-waitlisted;
   }
   &.schedule-conflict {
+    color: white;
     background: $clr-status-conflict;
   }
 
@@ -28,6 +31,7 @@ $clr-status-conflict: #D8534F;
     margin-bottom: 5px;
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
   }
 
   .content {
@@ -35,7 +39,16 @@ $clr-status-conflict: #D8534F;
     flex-direction: column;
 
     .content-section {
-
+      .section-table {
+        & tr {
+          & td {
+            padding: 10px;
+          }
+          & td {
+            padding: 10px;
+          }
+        }
+      }
     }
   }
 }
