@@ -8,7 +8,7 @@ var Section = (function () {
         this.id = id;
         this.instructor = instructor;
         this.time = time;
-        this.day = day;
+        this.days = day;
         this.capacity = capacity;
         this.enrolled = enrolled;
     }
@@ -19,7 +19,7 @@ var Section = (function () {
         return this.time;
     };
     Section.prototype.getDay = function () {
-        return this.day;
+        return this.days;
     };
     Section.prototype.getCapactiy = function () {
         return this.capacity;

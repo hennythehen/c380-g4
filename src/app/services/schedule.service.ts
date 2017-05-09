@@ -11,14 +11,14 @@ export class ScheduleService {
   parseCourseDays(sect: EnrolledSection): DayOfWeek[] {
     const days: DayOfWeek[] = [];
     let c: string;
-    for (let i = 0; i < sect.section.day.length; i += 1) {
-      c = sect.section.day.charAt(i);
+    for (let i = 0; i < sect.section.days.length; i += 1) {
+      c = sect.section.days.charAt(i);
       switch (c) {
         case 'M':
           days.push(DayOfWeek.Mon);
           break;
         case 'T':
-          if (sect.section.day[i + 1] === 'h') {
+          if (sect.section.days[i + 1] === 'h') {
             days.push(DayOfWeek.Thu);
           } else {
             days.push(DayOfWeek.Tue);
@@ -31,7 +31,7 @@ export class ScheduleService {
           days.push(DayOfWeek.Fri);
           break;
         case 'S':
-          if (sect.section.day[i + 1] === 'a') {
+          if (sect.section.days[i + 1] === 'a') {
             days.push(DayOfWeek.Sat);
           } else {
             days.push(DayOfWeek.Sun);

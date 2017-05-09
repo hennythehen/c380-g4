@@ -17,7 +17,7 @@
         >
           {{day}}
           <p><em>{{enrSec.isCourse.name}}</em></p>
-          <p>Time: {{enrSec.section.time}}</p>
+          <p>Time: {{enrSec.section.timeInterval.start.getFormattedTime()}} - {{enrSec.section.timeInterval.end.getFormattedTime()}}</p>
           <p>Instructor: {{enrSec.section.instructor}}</p>
         </div>
       </div>

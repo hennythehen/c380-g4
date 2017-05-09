@@ -1,5 +1,6 @@
 import {Course} from './course';
 import {Section} from './section';
+import {TimeInterval} from './time-interval';
 /**
  * Created by kenny on 4/21/17.
  */
@@ -37,9 +38,8 @@ export const COURSES: Course[] = [
 export const INITCOURSES: Course[] = [
   new Course('COMP222', 'Computer Architecture', 'Computer Science', null, null,
     [
-      new Section('1', 'Dr. X', '7:00-9:30', 'MW', 40, false),
-      new Section('2', 'Dr. X', '7:00-9:30', 'MW', 40, false),
-      new Section('3', 'Dr. X', '7:00-9:30', 'MW', 40, false)
+      new Section('1', 'Dr. X', 700, 930, 'MW', 30, null, COURSES[14]),
+      new Section('1', 'Mr. Smith', 830, 1000, 'MWF', 40, null, COURSES[14]),
     ]),
   new Course('ART80', '3D Modeling', 'Art' , null, null, null),
   new Course('ART100', 'Photoshop', 'Art' , null, null, null)

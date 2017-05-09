@@ -44,7 +44,6 @@ export class EnrollmentService {
   }
 
   private sectionIsFull(eSection: EnrolledSection): boolean {
-    //TODO get server logic here
     return false;
   }
 
@@ -55,9 +54,5 @@ export class EnrollmentService {
       }
     }
     return false;
-  }
-
-  private checkScheduleConflicts(eSection: EnrolledSection): boolean {
-
   }
 }
