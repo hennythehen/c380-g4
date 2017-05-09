@@ -1,4 +1,6 @@
-<div class="tile schedule-conflict">
+<div
+  [ngClass]="{enrolled: enrolledFlag === true}"
+  class="tile">
   <div class="heading">
     <div>
       <div class="course-code">{{course.name}}</div>

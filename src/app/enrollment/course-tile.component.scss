@@ -22,10 +22,10 @@ $clr-status-conflict: #D8534F;
     color: white;
     background: $clr-status-waitlisted;
   }
-  &.schedule-conflict {
-    color: white;
-    background: $clr-status-conflict;
-  }
+  //&.schedule-conflict {
+  //  color: white;
+  //  background: $clr-status-conflict;
+  //}
 
   .heading {
     margin-bottom: 5px;

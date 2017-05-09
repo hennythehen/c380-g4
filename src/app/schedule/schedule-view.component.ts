@@ -46,11 +46,5 @@ export class ScheduleViewComponent implements OnInit {
     if (this.enrollmentService.dropEnrolledSection(es)) {
       ScheduleService.schedule.dropSection(es);
     }
-    // for (let i = 0; i < this.enrolledSections.length; i++) {
-    //   const esElem: EnrolledSection = this.enrolledSections[i];
-    //   if (es === esElem) {
-    //     this.enrolledSections.splice(i, 1);
-    //   }
-    // }
   }
 }

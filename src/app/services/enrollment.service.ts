@@ -35,7 +35,6 @@ export class EnrollmentService {
       for (let i = 0; i < esArr.length; i++) {
         const esElem = esArr[i];
         if (esElem === es) {
-          alert('found');
           esArr.splice(i, 1);
           return true;
         }
