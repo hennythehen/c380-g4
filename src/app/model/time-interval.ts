@@ -8,7 +8,9 @@ export class TimeInterval {
   end: ITime;
   static intervalsOverlap(inta: TimeInterval, intb: TimeInterval) {
     return inta.start.isBetween(intb.start, intb.end) ||
-        inta.end.isBetween(intb.start, intb.end);
+        inta.end.isBetween(intb.start, intb.end) ||
+          (inta.start.getComparableTime() === intb.start.getComparableTime() &&
+           inta.end.getComparableTime() === intb.end.getComparableTime());
   }
   constructor(start: ITime, end: ITime) {
     this.start = start;

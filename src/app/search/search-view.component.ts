@@ -3,11 +3,12 @@ import {Course} from '../model/course';
 import {CourseService} from '../services/course.service';
 import {SearchService} from '../services/search.service';
 import {EnrollmentService} from '../services/enrollment.service';
+import {ScheduleService} from '../services/schedule.service';
 
 
 @Component({
   selector: 'app-search-view',
-  providers: [CourseService, SearchService, EnrollmentService],
+  providers: [CourseService, SearchService, EnrollmentService, ScheduleService],
   template: `
     <h3>SearchView</h3>
     <div class="filter-list">

@@ -6,10 +6,11 @@ import { CourseService } from '../services/course.service';
 import { Course } from '../model/course';
 import {EnrollmentService} from '../services/enrollment.service';
 import {Section} from '../model/section';
+import {ScheduleService} from '../services/schedule.service';
 
 @Component({
   selector: 'app-enrollment-view',
-  providers: [CourseService, EnrollmentService],
+  providers: [CourseService, EnrollmentService, ScheduleService],
   templateUrl: 'enrollment-view.component.html',
   styleUrls: ['enrollment-view.component.scss']
 })

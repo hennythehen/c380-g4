@@ -60,7 +60,4 @@ export class ScheduleViewComponent implements OnInit {
   private getDayStrFromEnum(d: DayOfWeek): string {
     return DayOfWeek[d];
   }
-  private printenrolled() {
-    console.log('printenrolled', this.enrolledSections);
-  }
 }
