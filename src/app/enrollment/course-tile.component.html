@@ -1,13 +1,15 @@
 <div class="tile">
   <div class="heading">
-    <div class="course-code">{{course.name}}</div>
-    <div class="course-title">{{course.title}}</div>
-    <button
+    <div>
+      <div class="course-code">{{course.name}}</div>
+      <div class="course-title">{{course.title}}</div>
+    </div>
+    <span
       (click)="unpin(course)"
-      class="unpin-icon">X</button>
+      class="unpin-icon">x</span>
   </div>
-  <div class="content">
-    <div class="content-section">
+  <div class="tile-content-content">
+    <div class="tile-content-section">
       <button
         (click)="showSectionsToggle()"
       >Show Sections</button>

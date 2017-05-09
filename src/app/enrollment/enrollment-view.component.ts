@@ -7,6 +7,7 @@ import { Course } from '../model/course';
 import {EnrollmentService} from '../services/enrollment.service';
 import {Section} from '../model/section';
 import {ScheduleService} from '../services/schedule.service';
+import {Error} from 'tslint/lib/error';
 
 @Component({
   selector: 'app-enrollment-view',
@@ -31,6 +32,10 @@ export class EnrollmentViewComponent implements OnInit {
     this.courseService.pinToggle(course);
   }
   onEnroll(section: Section, course: Course) {
-    this.enrollmentService.enroll(course, section);
+    try {
+      this.enrollmentService.enroll(course, section);
+    } catch (e) {
+      alert(e.message);
+    }
   }
 }

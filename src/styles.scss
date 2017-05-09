@@ -10,11 +10,12 @@ $clr-status-enrolled: #5CB85C;
 $clr-status-waitlisted: #0275D8;
 $clr-status-conflict: #D8534F;
 
-body {
+html, body {
   font-family: Arial;
   margin: 0;
   padding: 0;
   border: 0;
+  height: 100%;
 }
 
 ul {
@@ -83,5 +84,15 @@ $vertical-nav-width: 200px;
   background-color: darken($primary-color, 5%);
   margin-top: $header-bar-height;
   margin-left: $vertical-nav-width;
+  overflow: hidden;
+  height: 100%;
+}
+
+.content-wrapper {
+  height: 100%;
+}
+
+.wrapper {
+  height: 100%;
 }
 

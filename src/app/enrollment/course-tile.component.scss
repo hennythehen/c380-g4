@@ -3,7 +3,6 @@ $clr-status-waitlisted: #0275D8;
 $clr-status-conflict: #D8534F;
 
 .tile {
-  //width: 200px;
   margin: 13px;
   background: white;
   position: relative;
@@ -12,6 +11,8 @@ $clr-status-conflict: #D8534F;
 
   display: flex;
   flex-direction: column;
+  border-radius: 5px;
+  box-shadow: 4px 4px 9px #999;
 
   &.enrolled {
     background: $clr-status-enrolled;
@@ -25,6 +26,8 @@ $clr-status-conflict: #D8534F;
 
   .heading {
     margin-bottom: 5px;
+    display: flex;
+    flex-direction: row;
   }
 
   .content {
@@ -38,13 +41,15 @@ $clr-status-conflict: #D8534F;
 }
 
 .unpin-icon {
-  width: 25px;
-  height: 25px;
-  position: absolute;
-  top: 25px;
-  left: 160px;
-  background-color:red;
-  color: white;
+  width: 15px;
+  //height: 25px;
+  //position: absolute;
+  //top: 10px;
+  //left: 180px;
+  text-align: center;
+  color: black;
+  font-weight: bold;
+  cursor: pointer;
 }
 
 
