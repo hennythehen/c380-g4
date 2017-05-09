@@ -27,5 +27,6 @@ export class EnrollmentViewComponent implements OnInit {
   }
   onUnpin(course: Course) {
     this.courseService.pinToggle(course);
+
   }
 }
